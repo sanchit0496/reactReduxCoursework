@@ -15,7 +15,7 @@ const App =  () => {
     const test = {id : 1, name: 'Submit'}
     return(
         <div>
-            <label for="name">{lbl}</label>
+            <label htmlFor ="name">{lbl}</label>
             <input id="name" type="text" />
             <input type="submit" style = 
             {buttonStyle} value = {test.name}/> 
