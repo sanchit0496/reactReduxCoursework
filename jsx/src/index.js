@@ -10,12 +10,15 @@ function getButtonText(){
  //craete component
 const App =  () => {
     // const buttonText = 'Click Me';
+    const lbl = "Name ";
+    const buttonStyle = {backgroundColor:'lightblue', color: 'white'};
+    const test = {id : 1, name: 'Submit'}
     return(
         <div>
-            <label for="name">Name</label>
+            <label for="name">{lbl}</label>
             <input id="name" type="text" />
             <input type="submit" style = 
-            {{backgroundColor:'lightblue', color: 'white'}} value = {getButtonText()}/> 
+            {buttonStyle} value = {test.name}/> 
         </div>
     )
 }
