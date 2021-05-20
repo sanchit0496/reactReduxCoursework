@@ -2,15 +2,19 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
 
+ //craete component
 const App =  () => {
     return(
         <div>
-            <h1>Hello World</h1>
+            <label for="name">Name</label>
+            <input id="name" type="text" />
+            <input type="submit" style = 
+            {{backgroundColor:'lightblue', color: 'white'}} value = "Submit"/>
         </div>
     )
 }
 
-
+//display on the screen
 ReactDOM.render(
     <App />,
     document.getElementById('root')
