@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CommentDetail from './CommentDetail';
 
 const App = () => {
     return(
-        <h1>Hello</h1>
+        <CommentDetail />
     )
 }
 
