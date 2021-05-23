@@ -17,6 +17,14 @@ class App extends React.Component{
         );
     }
 
+    componentDidMount(){
+        console.log("did mount");
+    }
+
+    componentDidUpdate(){
+        console.log("did update");
+    }
+
     render(){
         if(this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMessage}</div>
