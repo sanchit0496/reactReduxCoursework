@@ -18,7 +18,8 @@ class App extends React.Component{
         console.log("did update");
     }
 
-    render(){
+    //can be named anything
+    renderContent(){
         if(this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMessage}</div>
         }
@@ -28,6 +29,14 @@ class App extends React.Component{
         if(!this.state.errorMessage && !this.state.lat){
             return <Spinner message = "kindly enter"/>
         }
+    }
+
+    render(){
+        return(
+        <div className="border red">
+            {this.renderContent()};
+        </div>
+        )
     }
 
 }
