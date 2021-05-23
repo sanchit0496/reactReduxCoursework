@@ -1,4 +1,5 @@
 import React from 'react';
+import './SeasonDisplay.css';
 
 const seasonConfig = {
     summer:{
@@ -26,10 +27,10 @@ const SeasonDisplay = props => {
     let seasonInfo = seasonConfig[season];
 
     return(
-        <div>
-            <i className = {`${seasonInfo.icon} icon`} />
+        <div className = {`season-display ${season}`}>
+            <i className = {`icon-left massive ${seasonInfo.icon} icon`} />
             <h1>{seasonInfo.text}</h1>
-            <i className = {`${seasonInfo.icon} icon`} />
+            <i className = {`icon-right massive ${seasonInfo.icon} icon`} />
         </div>
     )
 }
