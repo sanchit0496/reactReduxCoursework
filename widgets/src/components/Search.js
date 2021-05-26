@@ -3,9 +3,9 @@ import axios from 'axios';
 
 const Search = () => {
 
-    const [term, setTerm] = useState('wikipedia');
+    const [term, setTerm] = useState('');
     const [results, setResults] = useState([]);
-console.log(results);
+
     useEffect(() => {
         const  search =  async () => {
             const {data} = await axios.get('https://en.wikipedia.org/w/api.php', {
@@ -19,9 +19,22 @@ console.log(results);
             });
             setResults(data.query.search);
         }
-        if(term){
+
+        if(term && !results.length){
             search();
+        }else{
+            const timeoutId = setTimeout(() => {
+                if(term){
+                    search();
+                }
+            },2500);
+            
+            return () => {
+                clearTimeout(timeoutId);
+            }
         }
+
+
     }, [term]);
 
 
