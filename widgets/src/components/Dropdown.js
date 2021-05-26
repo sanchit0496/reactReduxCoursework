@@ -7,11 +7,25 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     const ref = useRef();
 
     useEffect(() => {
-        document.body.addEventListener("click",(event) => {
-            //contains is used to check if one DOM element already present inside the another one
-            if(ref.current.contains(event.target)){
-                return;
-            }
+        const onBodyClick = (event) => {
+        if (ref.current.contains(event.target)) {
+            return;
+        }
+        setOpen(false);
+        };
+        document.body.addEventListener("click", onBodyClick, { capture: true });
+    
+        return () => {
+          document.body.removeEventListener("click", onBodyClick, {
+            capture: true,
+          });
+        };
+      }, []);
+    
+      useEffect(() => {
+        document.body.addEventListener(
+          "click",
+          () => {
             setOpen(false);
           },
           { capture: true }
