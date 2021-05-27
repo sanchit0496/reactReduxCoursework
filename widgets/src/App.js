@@ -5,6 +5,7 @@ import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
 import Convert from './components/Convert.js';
 import Route from './components/Route.js';
+import Header from './components/Header.js';
 
 let item = [
     {
@@ -36,29 +37,29 @@ let options = [
     }
 ]
 
-const showAccordion = () => {
-    if(window.location.pathname === '/'){
-        return <Accordion items = {item} />;
-    }
-}
+// const showAccordion = () => {
+//     if(window.location.pathname === '/'){
+//         return <Accordion items = {item} />;
+//     }
+// }
 
-const showList = () => {
-    if(window.location.pathname === '/list'){
-        return <Search />;
-    }
-}
+// const showList = () => {
+//     if(window.location.pathname === '/list'){
+//         return <Search />;
+//     }
+// }
 
-const showDropdown = () => {
-    if(window.location.pathname === '/dropdown'){
-        return <Dropdown />;
-    }
-}
+// const showDropdown = () => {
+//     if(window.location.pathname === '/dropdown'){
+//         return <Dropdown />;
+//     }
+// }
 
-const showTranslate = () => {
-    if(window.location.pathname === '/translate'){
-        return <Translate />;
-    }
-}
+// const showTranslate = () => {
+//     if(window.location.pathname === '/translate'){
+//         return <Translate />;
+//     }
+// }
 
 const App = () => {
 
@@ -66,7 +67,7 @@ const App = () => {
 
     return(
         <div>
-
+            <Header />
             <Route path = "/">
                 <Accordion items = {item}/>
             </Route>
