@@ -4,6 +4,7 @@ import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
 import Convert from './components/Convert.js';
+import Route from './components/Route.js';
 
 let item = [
     {
@@ -61,12 +62,32 @@ const showTranslate = () => {
 
 const App = () => {
 
+    const [selected, setSelected] = useState(options[0]);
+
     return(
         <div>
-            {showAccordion()}
-            {showList()}
-            {showDropdown()}
-            {showTranslate()}
+
+            <Route path = "/">
+                <Accordion items = {item}/>
+            </Route>
+
+            <Route path = "/list">
+                <Search />
+            </Route>
+
+            <Route path = "/dropdown">
+                <Dropdown
+                label = "Select Color"
+                options = {options}
+                selected = {selected}
+                onSelectedChange = {setSelected}
+                />
+            </Route>
+
+            <Route path = "/translate">
+                <Translate />
+            </Route>
+
         </div>
     )
 }
