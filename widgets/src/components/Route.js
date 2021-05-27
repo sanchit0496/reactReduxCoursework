@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Route = ({ path, children }) =>{
-    return window.location.pathname === path ? children : null
+    if(window.location.pathname === path){
+        return children;
+    }else{
+        return null;
+    }
 }
 
 export default Route;
