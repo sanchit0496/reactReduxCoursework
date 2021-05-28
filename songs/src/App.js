@@ -1,11 +1,8 @@
 import React from 'react'
-import Songs from './components/Songs.js';
 
 const App = () => {
     return (
-        
-            <Songs />
-        
+        <h1>App</h1>
     )
 }
 
