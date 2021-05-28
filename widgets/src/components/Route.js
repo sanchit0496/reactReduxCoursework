@@ -11,7 +11,7 @@ const Route = ({ path, children }) =>{
         window.addEventListener('popstate', onLocationChange);
 
         return () => {
-            window.addEventListener('popstate', onLocationChange);
+            window.removeEventListener('popstate', onLocationChange);
         }
     }, [])
 
