@@ -8,11 +8,13 @@ const Route = ({ path, children }) =>{
         const onLocationChange = () => {
             setCurrentPath(window.location.pathname)
         }
+
         window.addEventListener('popstate', onLocationChange);
 
         return () => {
             window.removeEventListener('popstate', onLocationChange);
         }
+        
     }, [])
 
     if(window.location.pathname === path){
